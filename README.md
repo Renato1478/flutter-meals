@@ -1,4 +1,4 @@
-# delimeals
+# fluttermeals
 
 A new Flutter project.
 

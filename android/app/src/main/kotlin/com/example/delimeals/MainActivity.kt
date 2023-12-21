@@ -1,4 +1,4 @@
-package com.example.delimeals
+package com.example.fluttermeals
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttermeals/data/dummy_data.dart';
 
 class CategoryMealsScreenArguments {
   final String id;
@@ -18,15 +19,24 @@ class CategoryMealsScreen extends StatelessWidget {
     if (route == null) return const SizedBox.shrink();
     final routeArgs = route.settings.arguments as CategoryMealsScreenArguments;
 
+    final categoryId = routeArgs.id;
     final categoryTitle = routeArgs.title;
+    final categoryMeals = DUMMY_MEALS.where((meal) {
+      return meal.categories.contains(categoryId);
+    }).toList();
 
     return Scaffold(
       appBar: AppBar(
         title: Text(categoryTitle),
       ),
-      body: const Center(
-        child: Text('The Recipes For The Category!'),
-      ),
+      body: Center(
+          child: ListView.builder(
+            itemBuilder: (ctx, i) {
+              return Text(categoryMeals[i].title);
+            },
+            itemCount: categoryMeals.length,
+          ),
+          ),
     );
   }
 }

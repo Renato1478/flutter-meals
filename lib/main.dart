@@ -1,5 +1,5 @@
-import 'package:delimeals/categories_screen.dart';
-import 'package:delimeals/category_meals_screen.dart';
+import 'package:fluttermeals/screens/categories_screen.dart';
+import 'package:fluttermeals/screens/category_meals_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
